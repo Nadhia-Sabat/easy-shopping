@@ -1,0 +1,233 @@
+* {
+    font-family: "Oswald", Poppins;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 400;
+    color: #5D5D7D;
+}
+
+.wrapper {
+    height: 100vh;
+    /*GARANTO QUE A MINHA div OCUPE TODA A TELA"ALTURA"*/
+    width: 100vw;
+    /*GARANTO QUE A MINHA div OCUPE TODA A TELA"LARGURA"*/
+
+}
+
+.container-left {
+    display: inline-block;
+    width: 60%;
+    /*ELE OCUPARÁ 60% DO ESPAÇO DA TELA*/
+
+    margin-top: 20%;
+    padding-left: 136px;
+
+
+}
+
+.container-right {
+    display: inline-block;
+
+    background-color: rgba(93, 93, 125, 0.16);
+    /*NO rgba É ADICIONADO MAIS UMA VARIANTE, ESSA ÚLTIMA VARIANTE É O opacity*/
+    height: 100vh;
+    /*A TELA RIGHT OCUPARÁ TODO O ESPAÇO DE ALTURA*/
+    width: 40%;
+    /*A TELA RIGHT OCUPARÁ TODO O ESPAÇO DE LARGURA*/
+    position: absolute;
+    /*POSIÇÃO ABSOLUTA OU SEJA CONTAINER-RIGHT FICARÁ SEMPRE NO LOCAL ONDE ESTÁ POSICIONADO*/
+
+
+}
+
+
+img {
+    position: relative;
+    /*PORQUE QUERO POSICIONAR A IMAGEM RELATIVO/COMPARADO AO LUGAR/POSIÇÃO INICIAL DESSA IMG*/
+    top: 15%;
+    right: 130px;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 80px;
+
+    width: 368px;
+
+
+}
+
+p {
+    font-size: 28px;
+    line-height: 48px;
+    opacity: 60%;
+
+    margin: 15px 0px;
+    /*PRIMEIRO VALOR SE REFERE AO TOP/BOTTOM, SEGUNDO VALOR SE REFERE A LEFT/RIGHT*/
+
+    width: 540px;
+
+
+}
+
+button {
+    background: #9499EA;
+    border: none;
+    border-radius: 30px;
+    width: 269px;
+    height: 62px;
+    box-shadow: 0px 10px 24px 0px rgba(148, 153, 234, 0.1);
+    cursor: pointer;
+
+    /*LETRAS DENTRO DO BOTÃO*/
+    font-size: 24px;
+    color: #FFFFFF;
+
+}
+
+button:hover {
+    opacity: .8;
+    /*QUANDO EU PASSAR O PONTEIRO DO CURSOR POR CIMA DO BOTÃO ELE FICARÁ MAIS OPÁCO, MAIS CLARO*/
+}
+
+button:active {
+    /*QUANDO EU FICAR NO BOTÃO ELE FICARÁ MAIS OPÁCO, MAIS CLARO AINDA*/
+    opacity: .5;
+}
+
+a {
+    font-size: 28px;
+    margin-right: 41px;
+    line-height: 41px;
+    cursor: pointer;
+}
+
+a:nth-child(2) {
+    opacity: 40%
+}
+
+a:hover {
+    /*O hover É QUANDO CLICA NA PALAVRA/BOTÃO*/
+    opacity: 0.4;
+}
+
+a:active {
+    /*O active É QUANDO PASSA O PONTEIRO DO MOUSE A PALAVRA/BOTÃO*/
+    opacity: 0.8;
+}
+
+header {
+    margin: 24px 0 0 57px;
+}
+
+/*RESPONSABILIDADE
+É UM PROGRAMADOR/APLICAÇÃO MOBILE FIRST : UMA APLICAÇÃO PENSADA PRIMEIRO NO MOBILE PARA DEPOIS SER FEITA NO DESKTOP
+N EXISTE UMA REGRA MAS VOCE ESCOLHE FAZER EM MOBILE FIRST OU DESKTOP FIRST, DEPENDE SE SEU SITE SERÁ ABERTO 
+PELOS SEUS CLIENTES MAIS PELO DESKTOP OU MOBILE 
+
+QUANTOS PORCENTO CADA TELA OCUPA NESSE CASO É 50% CADA TELA
+EM QUANTOS PIXELS QUEBRA "NESSE CASO APARTIR DOS 900PIXELS, POIS COMEÇA A FICAR FEIO"
+NAO PRECISO MAIS: DO display: inline-block (POIS QUERO Q AS TELAS FIQUEM UMA DE BAIXO DA OUTRA AGORA)
+padding E margin-top TIRO POR ENQUANTO
+width MUDO PRA 100% (A LARGURA DE CADA TELA SERÁ OCUPADA POR INTEIRO)
+height MUDO PARA 50vh (POIS QUERO QUE AS DUAS TELAS OCUPEM 50% CADA)
+*/
+
+@media screen and (max-width:900px) {
+
+    /*APARTIR DE 900px ELE SERÁ ESTILIZADO*/
+    .container-left {
+        /*CLASSE Q QUERO MUDAR*/
+        width: 100%;
+        min-height: 30%;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-right {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        /*IRÁ SE ADAPTAR CONFORME O TAMANHO DA TELA*/
+        position: static;
+        /*padding:40px;
+        padding-top:5px;*/
+      
+        padding-right: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        
+    }
+
+    img {
+        position: static;
+  
+        max-width:90%; /*A IMAGEM TERÁ NO MÁXIMO 90% DE LARGURA*/
+        margin: auto;
+
+        
+
+        align-items: center;
+
+        padding: 25px;
+
+       
+    }
+
+    header {
+        display: none; /*SEM MENU NO MOBILE*/
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 52px;
+        max-width: 50vw;
+        margin: auto;
+        margin-top:20px;
+        text-align: center;
+        /*PQ ANTES ESTAVA Á ESQUERDA*/
+    }
+
+    p {
+        margin: 15px 50px;
+        width: 70vw;
+        /*PQ ANTES ESTAVA DEFINIDO UM WIDTH*/
+        text-align: center;
+
+        font-size: 14px;
+        line-height: 24px;
+
+    }
+    
+
+    button{
+        margin:0 auto; /*PARA ALINHAR O BOTÃO NO CENTRO, MARGIN AUTOMATICA NA DIREITA/ESQUERDA, 
+        O BOTÃO FICARÁ ALINHADO NO MEIO, E O ZERO SE REFERE AO TOP E BOTTOM*/
+        display:block; /*E SÓ SERÁ APLICADO A MARGEM À CIMA QUANDO O display FOR block*/
+
+    }
+
+    @media screen and (max-width:360px) { /*TELAS MENORES COM NO MÁXIMO 330px*/
+        .container-left{
+            h1 {
+                font-size: 36px;
+                line-height: 52px;
+                min-width:60vw;
+                margin: auto;
+                margin-top: 30px;
+               
+                text-align: center;
+                /*PQ ANTES ESTAVA Á ESQUERDA*/
+            }
+        }
+
+       
+   }
+
+}
